@@ -1,0 +1,7 @@
+#超过1%用户使用的浏览器
+"> 1%",
+#最后两个版本
+"last 2 versions",
+"not dead",
+"Android >= 4.0", 
+"iOS >= 8"
