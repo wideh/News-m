@@ -8,7 +8,7 @@ import request from '@/utils/request'
 export const login = data => {
   return request({
     method: 'post',
-    url: '/app/v1_0/authorizations',
+    url: '/v1_0/authorizations',
     data
   })
 }
@@ -18,7 +18,7 @@ export const login = data => {
 export const sendSms = mobile => {
   return request({
     method: 'get',
-    url: `/app/v1_0/sms/codes/${mobile}`
+    url: `/v1_0/sms/codes/${mobile}`
   })
 }
 /*
@@ -27,7 +27,7 @@ export const sendSms = mobile => {
 export const getCurrentUser = () => {
   return request({
     method: 'get',
-    url: '/app/v1_0/user'
+    url: '/v1_0/user'
     // 用户权限设置，必须加请求头，可统一放到axios拦截器中
     // ，Authorization 特殊格式，Bearer +token
     // headers: {
@@ -41,7 +41,7 @@ export const getCurrentUser = () => {
 export const getUserChannels = () => {
   return request({
     method: 'get',
-    url: '/app/v1_0/user/channels'
+    url: '/v1_0/user/channels'
   })
 }
 /*
@@ -50,14 +50,14 @@ export const getUserChannels = () => {
 export const getAllChannels = () => {
   return request({
     method: 'get',
-    url: '/app/v1_0/channels'
+    url: '/v1_0/channels'
   })
 }
 /* 批量增加用户频道列表，用于在线存储 */
 export const addUserChannels = data => {
   return request({
     method: 'PATCH',
-    url: '/app/v1_0/user/channels',
+    url: '/v1_0/user/channels',
     data
   })
 }
@@ -65,7 +65,7 @@ export const addUserChannels = data => {
 export const deleteUserChannel = channelId => {
   return request({
     method: 'DELETE',
-    url: `/app/v1_0/user/channels/${channelId}`
+    url: `/v1_0/user/channels/${channelId}`
   })
 }
 /**
@@ -74,7 +74,7 @@ export const deleteUserChannel = channelId => {
 export const addFollow = userId => {
   return request({
     method: 'POST',
-    url: '/app/v1_0/user/followings',
+    url: '/v1_0/user/followings',
     data: {
       target: userId
     }
@@ -86,7 +86,7 @@ export const addFollow = userId => {
 export const deleteFollow = userId => {
   return request({
     method: 'DELETE',
-    url: `/app/v1_0/user/followings/${userId}`
+    url: `/v1_0/user/followings/${userId}`
   })
 }
 
@@ -96,7 +96,7 @@ export const deleteFollow = userId => {
 export function getUserById (userId) {
   return request({
     method: 'GET',
-    url: `/app/v1_0/users/${userId}`
+    url: `/v1_0/users/${userId}`
   })
 }
 
@@ -106,7 +106,7 @@ export function getUserById (userId) {
 export function followUser (userId) {
   return request({
     method: 'POST',
-    url: '/app/v1_0/user/followings',
+    url: '/v1_0/user/followings',
     data: {
       target: userId
     }
@@ -119,7 +119,7 @@ export function followUser (userId) {
 export function unFollowUser (userId) {
   return request({
     method: 'DELETE',
-    url: `/app/v1_0/user/followings/${userId}`
+    url: `/v1_0/user/followings/${userId}`
   })
 }
 
@@ -129,7 +129,7 @@ export function unFollowUser (userId) {
 export function getFollowingsByUser (userId, params) {
   return request({
     method: 'GET',
-    url: '/app/v1_0/user/followings',
+    url: '/v1_0/user/followings',
     params,
     data: {
       target: userId.toString()
@@ -143,7 +143,7 @@ export function getFollowingsByUser (userId, params) {
 export function getFollowersByUser (userId, params) {
   return request({
     method: 'GET',
-    url: '/app/v1_0/user/followers',
+    url: '/v1_0/user/followers',
     params,
     data: {
       target: userId.toString()
@@ -157,7 +157,7 @@ export function getFollowersByUser (userId, params) {
 export function getProfile (userId) {
   return request({
     method: 'GET',
-    url: '/app/v1_0/user/profile'
+    url: '/v1_0/user/profile'
   })
 }
 
@@ -167,7 +167,7 @@ export function getProfile (userId) {
 export function updateUserPhoto (formData) {
   return request({
     method: 'PATCH',
-    url: '/app/v1_0/user/photo',
+    url: '/v1_0/user/photo',
     // Content-Type multipart/form-data
     // 必须传递 FormData 对象
     data: formData
@@ -180,7 +180,7 @@ export function updateUserPhoto (formData) {
 export function updateUserProfile (data) {
   return request({
     method: 'PATCH',
-    url: '/app/v1_0/user/profile',
+    url: '/v1_0/user/profile',
     data
   })
 }

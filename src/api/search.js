@@ -7,7 +7,7 @@ import request from '@/utils/request'
 export const getSearchSuggestions = q => {
   return request({
     method: 'get',
-    url: '/app/v1_0/suggestion',
+    url: '/v1_0/suggestion',
     params: {
       q // 建议关键词
     }
@@ -17,7 +17,7 @@ export const getSearchSuggestions = q => {
 export const getSearchResult = params => {
   return request({
     method: 'get',
-    url: '/app/v1_0/search',
+    url: '/v1_0/search',
     params
   })
 }
@@ -25,13 +25,13 @@ export const getSearchResult = params => {
 export const getSearchHistory = () => {
   return request({
     method: 'get',
-    url: '/app/v1_0/search/histories'
+    url: '/v1_0/search/histories'
   })
 }
 /* 删除搜索历史 */
 export const deleteArticales = () => {
   return request({
     method: 'DELETE',
-    url: '/app/v1_0/search/histories'
+    url: '/v1_0/search/histories'
   })
 }

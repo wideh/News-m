@@ -7,10 +7,10 @@ import { Toast } from 'vant'
 import router from '@/router/'
 // 重新请求token 定义新的请求，不用request请求，以免混淆，响应出现错误后出现死循环
 const refreshTokenReq = axios.create({
-  baseURL: 'http://ttapi.research.itcast.cn'
+  baseURL: 'http://toutiao.itheima.net'
 })
 const request = axios.create({
-  baseURL: 'http://ttapi.research.itcast.cn', // 接口基础路径
+  baseURL: 'http://toutiao.itheima.net', // 接口基础路径
 
   // transformResponse 允许自定义原始的响应数据（字符串）
   transformResponse: [function (data) {
