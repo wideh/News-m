@@ -11,6 +11,7 @@ import './style/index.less'
 import 'amfe-flexible'
 // 引入dayjs第三方插件
 import './utils/day.js'
+import './utils/appback.js'
 Vue.use(Vant)
 
 Vue.config.productionTip = false
